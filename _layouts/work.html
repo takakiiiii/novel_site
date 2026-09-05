@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article>
+  <p class="back"><a href="{{ '/' | relative_url }}">← 作品一覧へ</a></p>
+
+  <header class="work-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <section class="chapter-list">
+    {% assign work_chapters = site.chapters | where: "work", page.slug | sort: "order" %}
+    {% for chapter in work_chapters %}
+      <article class="chapter-card">
+        <h2><a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a></h2>
+        {% if chapter.description %}
+          <p>{{ chapter.description }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </section>
+</article>
