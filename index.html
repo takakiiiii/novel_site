@@ -1,18 +1,18 @@
 ---
 layout: default
-title: 小説一覧
+title: 作品一覧
 ---
 
-<h1>小説一覧</h1>
-<p class="intro">ここに書いた小説を置いています。</p>
+<h1>作品一覧</h1>
+<p class="intro">作品タイトルを選ぶと、各話一覧が開きます。</p>
 
-<div class="novel-list">
-  {% assign sorted_novels = site.novels | sort: "order" %}
-  {% for novel in sorted_novels %}
-    <article class="novel-card">
-      <h2><a href="{{ novel.url | relative_url }}">{{ novel.title }}</a></h2>
-      {% if novel.description %}
-        <p>{{ novel.description }}</p>
+<div class="work-list">
+  {% assign sorted_works = site.works | sort: "order" %}
+  {% for work in sorted_works %}
+    <article class="work-card">
+      <h2><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h2>
+      {% if work.description %}
+        <p>{{ work.description }}</p>
       {% endif %}
     </article>
   {% endfor %}
