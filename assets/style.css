@@ -1,10 +1,4 @@
-:root {
-  color-scheme: light;
-}
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -21,8 +15,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-underline-offset: .18em;
 }
 
 .site-header {
@@ -52,36 +45,41 @@ h2 {
   line-height: 1.5;
 }
 
-.intro {
+.intro,
+.description {
   color: #666;
+}
+
+.intro {
   margin-bottom: 40px;
 }
 
-.novel-list {
+.work-list,
+.chapter-list {
   display: grid;
   gap: 20px;
 }
 
-.novel-card {
+.work-card,
+.chapter-card {
   border-top: 1px solid #ddd;
   padding-top: 20px;
 }
 
-.novel-card h2 {
+.work-card h2,
+.chapter-card h2 {
   margin: 0 0 8px;
 }
 
-.novel-card p {
+.work-card p,
+.chapter-card p {
   margin: 0;
   color: #666;
 }
 
-.novel-header {
+.work-header,
+.chapter-header {
   margin-bottom: 48px;
-}
-
-.description {
-  color: #666;
 }
 
 .novel-body {
@@ -94,7 +92,7 @@ h2 {
 
 .back {
   margin: 0 0 32px;
-  font-size: 0.95rem;
+  font-size: .95rem;
   color: #666;
 }
 
@@ -107,7 +105,7 @@ h2 {
   padding: 24px 20px;
   text-align: center;
   color: #888;
-  font-size: 0.85rem;
+  font-size: .85rem;
 }
 
 @media (max-width: 600px) {
