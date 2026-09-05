@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #222;
+  background: #fff;
+  font-family:
+    "Hiragino Mincho ProN",
+    "Yu Mincho",
+    "YuMincho",
+    "Noto Serif JP",
+    serif;
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.site-header {
+  border-bottom: 1px solid #ddd;
+  padding: 18px 20px;
+}
+
+.site-header a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.container {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1.4;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.intro {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.novel-list {
+  display: grid;
+  gap: 20px;
+}
+
+.novel-card {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.novel-card h2 {
+  margin: 0 0 8px;
+}
+
+.novel-card p {
+  margin: 0;
+  color: #666;
+}
+
+.novel-header {
+  margin-bottom: 48px;
+}
+
+.description {
+  color: #666;
+}
+
+.novel-body {
+  font-size: 1.05rem;
+}
+
+.novel-body p {
+  margin: 0 0 1.8em;
+}
+
+.back {
+  margin: 0 0 32px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.back.bottom {
+  margin: 56px 0 0;
+}
+
+.site-footer {
+  border-top: 1px solid #ddd;
+  padding: 24px 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 32px;
+  }
+
+  .novel-body {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+}

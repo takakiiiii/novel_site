@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="novel">
+  <p class="back"><a href="{{ '/' | relative_url }}">← 小説一覧へ</a></p>
+
+  <header class="novel-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="novel-body">
+    {{ content }}
+  </div>
+
+  <p class="back bottom"><a href="{{ '/' | relative_url }}">← 小説一覧へ</a></p>
+</article>
