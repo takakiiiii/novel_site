@@ -1,0 +1,17 @@
+title: すずの小説置き場
+description: 小説を置いておくためのシンプルな個人サイト
+theme: null
+
+collections:
+  novels:
+    output: true
+    permalink: /novels/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: novels
+    values:
+      layout: novel
+
+markdown: kramdown
