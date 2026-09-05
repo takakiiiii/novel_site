@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article class="chapter">
+  {% assign parent_work = site.works | where: "slug", page.work | first %}
+
+  <p class="back">
+    {% if parent_work %}
+      <a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
+    {% else %}
+      <a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+    {% endif %}
+  </p>
+
+  <header class="chapter-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="novel-body">
+    {{ content }}
+  </div>
+
+  <p class="back bottom">
+    {% if parent_work %}
+      <a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
+    {% else %}
+      <a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+    {% endif %}
+  </p>
+</article>
