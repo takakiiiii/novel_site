@@ -1,6 +1,6 @@
 ---
-title: サンプル作品
-description: ここに作品全体のあらすじを書けます。
+title: 短編置き場
+description: 短編が読めます
 order: 1
-slug: sample-work
+slug: short-stories
 ---
