@@ -1,0 +1,71 @@
+# 新しい作品を追加するとき
+
+## 1. _works に作品ファイルを作る
+
+ファイル名例：
+usagi-no-yoru.md
+
+中身：
+
+---
+title: ここに作品タイトル
+description: ここに作品の紹介文
+order: 2
+slug: usagi-no-yoru
+---
+
+## 2. _chapters に作品用フォルダを作る
+
+例：
+
+_chapters/usagi-no-yoru/
+
+※ _chapters の中にさらに _chapters を作らない！
+
+## 3. 第1話を作る
+
+ファイル名：
+
+01.md
+
+中身：
+
+---
+title: 第一話
+description:
+order: 1
+work: usagi-no-yoru
+---
+
+ここから本文。
+
+　段落の最初は全角スペース。
+
+「会話文はこんな感じ」
+
+　段落と段落の間には空行を1つ入れる。
+
+## 4. 第2話以降
+
+02.md
+
+---
+title: 第二話
+description:
+order: 2
+work: usagi-no-yoru
+---
+
+ここから第二話の本文。
+
+## 覚えておくこと
+
+作品名を追加
+↓
+_works に作品ファイル
+
+本文を追加
+↓
+_chapters/作品名/01.md
+
+slug と work は同じ名前にする
