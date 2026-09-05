@@ -3,15 +3,23 @@ description: 小説を置いておくためのシンプルな個人サイト
 theme: null
 
 collections:
-  novels:
+  works:
     output: true
-    permalink: /novels/:name/
+    permalink: /works/:name/
+  chapters:
+    output: true
+    permalink: /chapters/:name/
 
 defaults:
   - scope:
       path: ""
-      type: novels
+      type: works
     values:
-      layout: novel
+      layout: work
+  - scope:
+      path: ""
+      type: chapters
+    values:
+      layout: chapter
 
 markdown: kramdown
