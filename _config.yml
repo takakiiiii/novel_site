@@ -8,7 +8,7 @@ collections:
     permalink: /works/:name/
   chapters:
     output: true
-    permalink: /chapters/:name/
+permalink: /chapters/:path/
 
 defaults:
   - scope:
