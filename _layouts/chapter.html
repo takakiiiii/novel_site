@@ -1,33 +1,76 @@
 ---
 layout: default
 ---
+
 <article class="chapter">
-  {% assign parent_work = site.works | where: "slug", page.work | first %}
 
-  <p class="back">
-    {% if parent_work %}
-      <a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
-    {% else %}
-      <a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+{% assign parent_work = site.works | where: "slug", page.work | first %}
+
+{% assign same_work_chapters = site.chapters | where: "work", page.work | sort: "order" %}
+
+{% assign prev_chapter = nil %}
+{% assign next_chapter = nil %}
+{% assign found_current = false %}
+
+{% for chapter in same_work_chapters %}
+  {% if found_current %}
+    {% assign next_chapter = chapter %}
+    {% break %}
+  {% endif %}
+
+  {% if chapter.url == page.url %}
+    {% assign found_current = true %}
+  {% else %}
+    {% assign prev_chapter = chapter %}
+  {% endif %}
+{% endfor %}
+
+<p class="back">
+{% if parent_work %}
+<a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
+{% else %}
+<a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+{% endif %}
+</p>
+
+<header class="chapter-header">
+<h1>{{ page.title }}</h1>
+
+{% if page.description %}
+<p class="description">{{ page.description }}</p>
+{% endif %}
+</header>
+
+<div class="novel-body">
+{{ content }}
+</div>
+
+<nav class="chapter-nav">
+  <div>
+    {% if prev_chapter %}
+      <a href="{{ prev_chapter.url | relative_url }}">← 前の話</a>
     {% endif %}
-  </p>
-
-  <header class="chapter-header">
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-      <p class="description">{{ page.description }}</p>
-    {% endif %}
-  </header>
-
-  <div class="novel-body">
-    {{ content }}
   </div>
 
-  <p class="back bottom">
+  <div>
     {% if parent_work %}
-      <a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
-    {% else %}
-      <a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+      <a href="{{ parent_work.url | relative_url }}">目次</a>
     {% endif %}
-  </p>
+  </div>
+
+  <div>
+    {% if next_chapter %}
+      <a href="{{ next_chapter.url | relative_url }}">次の話 →</a>
+    {% endif %}
+  </div>
+</nav>
+
+<p class="back bottom">
+{% if parent_work %}
+<a href="{{ parent_work.url | relative_url }}">← {{ parent_work.title }}へ戻る</a>
+{% else %}
+<a href="{{ '/' | relative_url }}">← 作品一覧へ</a>
+{% endif %}
+</p>
+
 </article>
